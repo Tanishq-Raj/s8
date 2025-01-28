@@ -36,10 +36,11 @@ export default function NavigationBar() {
         <div className="flex flex-wrap flex-auto gap-10 justify-between items-center py-2.5 w-full max-md:max-w-full">
           {navItems.map((item, index) => (
             <NavLink
-              to={item.to}
               key={index}
-              className={`self-stretch my-auto ${activeIndex === index ? 'border-b-2 border-sky-900' : ''}`}
-              onClick={() => setActiveIndex(index)} // Set the active item when clicked
+              to={item.to}
+              className={({ isActive }) =>
+                `cursor-pointer ${isActive ? "font-bold" : ""}`
+              }
             >
               {item.label}
             </NavLink>

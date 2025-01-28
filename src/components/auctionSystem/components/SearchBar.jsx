@@ -15,7 +15,7 @@ export default function SearchBar() {
       <input
         type="search"
         id="searchInput"
-        className="flex-auto my-auto bg-transparent text-white text-opacity-40 border-none focus:outline-none w-[400px]"  // Increased width here
+        className="flex-auto my-auto bg-transparent text-white text-opacity-40 border-none focus:outline-none w-[400px]"
         placeholder="Search for auctions near you ...."
         aria-label="Search for auctions near you"
       />
