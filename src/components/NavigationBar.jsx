@@ -3,7 +3,7 @@ import * as React from "react";
 export default function NavigationBar() {
   const navItems = [
     { label: "Home", isBold: true },
-    { label: "Properties", isBold: false },
+    { label: "Assets", isBold: false },
     { label: "About Us", isBold: false },
     { label: "Contact Us", isBold: false },
   ];

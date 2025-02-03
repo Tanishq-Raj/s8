@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import NavigationBar from "./components/NavigationBar";
 import SearchBar from "./components/SearchBar";
 import ProcessSteps from "./components/ProcessSteps";
@@ -8,34 +9,119 @@ import ContactInfo from "./components/ContactInfo";
 import PropertyAuctions from "./components/PropertyAuctions";
 
 export default function AuctionLanding() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      title: (
+        <>
+          <span className="text-yellow-900">V</span>
+          <span className="text-white">alue,</span>{" "}
+          <span className="text-yellow-600">B</span>
+          <span className="text-white">uy, Sell</span>
+        </>
+      ),
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar interdum enim a vestibulum, nunc cras. Gravida morbi sit sed egestas cursus risus imperdiet bibendum nisl enim.",
+      image: "https://cdn.builder.io/api/v1/image/assets/TEMP/4fee83c532ee2cbc0dbe8438799b6e163611a329dff92d59d5826885bac100c5?placeholderIfAbsent=true&apiKey=94eb20460e0f412389c7e1a6f1ae6031"
+    },
+    {
+      title: (
+        <>
+          <span className="text-yellow-900">E</span>
+          <span className="text-white">xplore</span>{" "}
+          <span className="text-yellow-600">P</span>
+          <span className="text-white">roperties</span>
+        </>
+      ),
+      description: "Discover your dream property through our extensive collection of premium real estate listings.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3"
+    },
+    {
+      title: (
+        <>
+          <span className="text-yellow-900">A</span>
+          <span className="text-white">uction</span>{" "}
+          <span className="text-yellow-600">D</span>
+          <span className="text-white">eals</span>
+        </>
+      ),
+      description: "Participate in our exclusive property auctions and find the best deals in the market.",
+      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3"
+    },
+    {
+      title: (
+        <>
+          <span className="text-yellow-900">I</span>
+          <span className="text-white">nvest</span>{" "}
+          <span className="text-yellow-600">S</span>
+          <span className="text-white">mart</span>
+        </>
+      ),
+      description: "Make informed investment decisions with our expert guidance and market insights.",
+      image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3"
+    },
+    {
+      title: (
+        <>
+          <span className="text-yellow-900">L</span>
+          <span className="text-white">uxury</span>{" "}
+          <span className="text-yellow-600">L</span>
+          <span className="text-white">iving</span>
+        </>
+      ),
+      description: "Experience the epitome of luxury living with our premium property collection.",
+      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3"
+    },
+    {
+      title: (
+        <>
+          <span className="text-yellow-900">T</span>
+          <span className="text-white">rusted</span>{" "}
+          <span className="text-yellow-600">C</span>
+          <span className="text-white">hoice</span>
+        </>
+      ),
+      description: "Join thousands of satisfied customers who have found their perfect property through our platform.",
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3"
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
   return (
-    <div className="flex overflow-hidden flex-col bg-white ">
-      
+    <div className="flex overflow-hidden flex-col bg-white">
       <div className="pr-20 pl-2 w-full bg-[#004663] max-md:pr-5 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
           <div className="flex flex-col w-[64%] max-md:ml-0 max-md:w-full">
             <div className="flex relative flex-col items-start px-8 pt-12 w-full text-base text-right min-h-[643px] pb-[546px] text-white text-opacity-40 max-md:px-5 max-md:pb-24 max-md:max-w-full">
               <img
                 loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/4fee83c532ee2cbc0dbe8438799b6e163611a329dff92d59d5826885bac100c5?placeholderIfAbsent=true&apiKey=94eb20460e0f412389c7e1a6f1ae6031"
-                alt="Hero Background"
-                className="object-cover absolute inset-0 size-full"
+                src={slides[currentSlide].image}
+                alt={`Slide ${currentSlide + 1}`}
+                className="object-cover absolute inset-0 size-full transition-opacity duration-500"
               />
-              <SearchBar />
+              <div className="relative z-10">
+                <SearchBar />
+              </div>
             </div>
           </div>
           <div className="flex flex-col ml-5 w-[36%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col mt-20 max-md:mt-10 max-md:max-w-full">
               <div className="text-9xl font-extrabold text-yellow-900 leading-[112px] max-md:max-w-full max-md:text-4xl max-md:leading-10">
-                <span className="text-yellow-900">V</span>
-                <span className="text-white">alue,</span>{" "}
-                <span className="text-yellow-600">B</span>
-                <span className="text-white">uy, Sell</span>
+                {slides[currentSlide].title}
               </div>
               <div className="self-end mt-14 mr-7 text-xl leading-7 text-white max-md:mt-10 max-md:mr-2.5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pulvinar interdum enim a vestibulum, nunc cras. Gravida morbi
-                sit sed egestas cursus risus imperdiet bibendum nisl enim.
+                {slides[currentSlide].description}
               </div>
             </div>
           </div>
@@ -43,12 +129,14 @@ export default function AuctionLanding() {
       </div>
       <div className="flex flex-wrap gap-5 justify-between self-end mt-12 mr-24 max-w-full w-[682px] max-md:mt-10 max-md:mr-2.5">
         <div className="flex gap-4 items-center my-auto">
-          {[...Array(6)].map((_, index) => (
-            <div
+          {slides.map((_, index) => (
+            <button
               key={index}
-              className={`flex shrink-0 self-stretch my-auto w-4 h-4 rounded-full ${
-                index === 0 ? "bg-sky-900" : "bg-zinc-300"
+              onClick={() => goToSlide(index)}
+              className={`flex shrink-0 self-stretch my-auto w-4 h-4 rounded-full transition-colors duration-300 ${
+                index === currentSlide ? "bg-sky-900" : "bg-zinc-300 hover:bg-zinc-400"
               }`}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
@@ -68,19 +156,9 @@ export default function AuctionLanding() {
       </div>
       <div className="flex flex-col pr-7 pl-16 mt-12 w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
         <div className="shrink-0 self-end max-w-full h-px border border-black border-solid w-[1312px]" />
-        <div className="flex gap-10 mt-16 max-w-full leading-none w-[401px] max-md:mt-10">
-          <div className="flex flex-col flex-1 text-3xl font-bold text-sky-900">
-            <div className="max-md:mr-0.5">Bid on item</div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/20df2056ac46a94304eb9da9527cf4188836035ac2d1bf3db214c1d3c3a55906?placeholderIfAbsent=true&apiKey=94eb20460e0f412389c7e1a6f1ae6031"
-              alt="Bid Decoration"
-              className="object-contain mt-6 aspect-[58.82] w-[173px]"
-            />
-          </div>
-          <div className="grow shrink self-start text-xl text-black w-[129px]">
-            Become a Seller{" "}
-          </div>
+        <div className="flex gap-5 items-center mt-16 max-w-full leading-none w-[401px] max-md:mt-10">
+          <div className="text-xl text-black">Bid on item</div>
+          <div className="text-xl text-black">Become a Seller</div>
         </div>
         <div className="self-center mt-28 ml-7 text-2xl font-semibold leading-9 text-center text-sky-900 w-[1022px] max-md:mt-10 max-md:max-w-full">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar

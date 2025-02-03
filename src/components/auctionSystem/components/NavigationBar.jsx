@@ -8,8 +8,8 @@ export default function NavigationBar() {
 
   const navItems = [
     { label: "Home", isBold: true, to: "/" },
-    { label: "Auctions", isBold: false, to: "/auctions" },
-    { label: "Properties", isBold: false, to: "/properties" },
+    // { label: "Auctions", isBold: false, to: "/auctions" },
+    { label: "Assets", isBold: false, to: "/properties" },
     { label: "About Us", isBold: false, to: "/about" },
     { label: "Contact Us", isBold: false, to: "/contact" },
   ];

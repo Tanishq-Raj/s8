@@ -1,48 +1,44 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from "react";
 
-export default function PropertyCard({ image, title, location, bidPrice, bank }) {
+export function PropertyCard({ image }) {
   return (
-    <div className="flex overflow-hidden flex-col grow shrink self-stretch my-auto bg-white rounded-2xl min-h-[633px] min-w-[240px] shadow-[0px_4px_40px_rgba(0,0,0,0.08)] w-[358px] max-md:max-w-full
-      transition-all duration-300 ease-in-out cursor-pointer
-      hover:translate-y-[-8px] hover:bg-gray-50 hover:shadow-[0px_8px_40px_rgba(0,0,0,0.12)]">
-      <img
-        loading="lazy"
-        src={image}
-        alt={title}
-        className="object-contain flex-1 w-full aspect-[1.24] max-md:max-w-full"
-      />
-      <div className="flex flex-col p-4 w-full max-md:max-w-full">
-        <div className="flex flex-col p-2 w-full">
-          <div className="text-2xl font-semibold text-slate-500">{title}</div>
-          <div className="flex-1 shrink gap-2.5 self-stretch p-0.5 mt-1 w-full text-base text-slate-400">
-            {location}
+    <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+      <div className="group grow px-10 py-7 w-full bg-white border-2 border-solid border-zinc-200 rounded-[30px] max-md:px-5 max-md:mt-8 max-md:max-w-full transition-all duration-300 hover:shadow-lg hover:shadow-blue-100 hover:border-blue-200 hover:scale-[1.02]">
+        <div className="flex gap-5 max-md:flex-col">
+          <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+            <img
+              loading="lazy"
+              src={image}
+              alt="Property"
+              className="object-contain grow shrink-0 w-44 max-w-full rounded-3xl aspect-[0.92] max-md:mt-10"
+            />
           </div>
-        </div>
-        <div className="flex gap-2.5 items-start mt-8 w-full text-base text-center">
-          <div className="flex-1 shrink leading-6 text-black basis-0">
-            <span className="text-slate-500">Bid Price</span>
-            <br />
-            <span className="font-medium text-zinc-900">{bidPrice}</span>
+          <div className="flex flex-col ml-5 w-[67%] max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col w-full max-md:mt-10">
+              <div className="self-start text-3xl font-semibold text-slate-900">
+                103/143 West Street,
+                <br />
+                Crows Nest
+              </div>
+              <div className="flex gap-5 justify-between mt-3 text-xl font-medium">
+                <div className="flex flex-col self-start text-gray-400">
+                  <div className="flex gap-5 justify-between">
+                    <div>10 Bedroom</div>
+                    <div>150 M</div>
+                  </div>
+                  <div className="self-start mt-9">Posted by X Builder</div>
+                </div>
+                <div className="flex flex-col">
+                  <div className="self-end text-gray-400 max-md:mr-2">2 Garage</div>
+                  <div className="px-6 py-1.5 mt-7 text-center text-white whitespace-nowrap bg-gray-400 rounded-xl max-md:px-5 transition-all duration-300 group-hover:bg-blue-500 group-hover:shadow-lg group-hover:shadow-blue-200">
+                    $45,545
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="flex-1 shrink leading-none basis-0 text-slate-500">
-            {bank}
-          </div>
-        </div>
-        <div className="flex flex-col justify-center px-12 py-0.5 mt-8 w-full text-xl font-medium text-center text-zinc-50 max-md:px-5">
-          <button className="flex-1 shrink gap-2.5 self-stretch p-2 w-full bg-sky-900 rounded">
-            See Details
-          </button>
         </div>
       </div>
     </div>
   );
 }
-
-PropertyCard.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  bidPrice: PropTypes.string.isRequired,
-  bank: PropTypes.string.isRequired
-};

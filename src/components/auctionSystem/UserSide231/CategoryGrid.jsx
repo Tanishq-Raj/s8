@@ -5,7 +5,7 @@ const categories = [
   { title: "Industrial", image: "https://cdn.builder.io/api/v1/image/assets/TEMP/8c28c58bac4778a9acd3ee18ce62f490004e3aaed8c22c88d8e324847e4fa2c0?placeholderIfAbsent=true&apiKey=643dc8ae27ef4b1eb644562c7626beaf" },
   { title: "Land", image: "https://cdn.builder.io/api/v1/image/assets/TEMP/64997a3915347ac3911b6e70ae7acd3980249eb8de85f7bc80cff5f771e5774d?placeholderIfAbsent=true&apiKey=643dc8ae27ef4b1eb644562c7626beaf" },
   { title: "Commercial", image: "https://cdn.builder.io/api/v1/image/assets/TEMP/e4a5994cc8fa128698043d22203eb2ad450f557ffce407bca7606ce8659fccf0?placeholderIfAbsent=true&apiKey=643dc8ae27ef4b1eb644562c7626beaf" },
-  { title: "Residential", image: "https://cdn.builder.io/api/v1/image/assets/TEMP/c26a87ba9b69c68509f10db9eba703ed6f6956506ef2b02870e65a89731045fb?placeholderIfAbsent=true&apiKey=643dc8ae27ef4b1eb644562c7626beaf" }
+  { image: "https://cdn.builder.io/api/v1/image/assets/TEMP/c26a87ba9b69c68509f10db9eba703ed6f6956506ef2b02870e65a89731045fb?placeholderIfAbsent=true&apiKey=643dc8ae27ef4b1eb644562c7626beaf", isImageOnly: true }
 ];
 
 export function CategoryGrid() {

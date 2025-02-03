@@ -107,7 +107,7 @@ export default function PropertyAuctions() {
         </div>
       </div>
 
-      <footer className="flex flex-col px-16 pt-32 pb-7 mt-20 w-full bg-zinc-800 max-md:px-5 max-md:pt-24 max-md:mt-10 max-md:max-w-full">
+      {/* <footer className="flex flex-col px-16 pt-32 pb-7 mt-20 w-full bg-zinc-800 max-md:px-5 max-md:pt-24 max-md:mt-10 max-md:max-w-full">
         <div className="w-full max-w-[1020px] max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col">
             <div className="flex flex-col w-[36%] max-md:ml-0 max-md:w-full">
@@ -148,7 +148,7 @@ export default function PropertyAuctions() {
             <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3836e1b4de30f50166de84d944499348988a1b4a56616da2e93bd2e9048e1674?placeholderIfAbsent=true&apiKey=94eb20460e0f412389c7e1a6f1ae6031" alt="Social media icon" className="object-contain shrink-0 aspect-square w-[30px]" />
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
