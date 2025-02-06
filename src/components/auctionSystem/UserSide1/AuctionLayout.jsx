@@ -68,7 +68,7 @@ function AuctionLayout() {
 
   return (
     <div className="flex overflow-hidden flex-col pt-7 pb-14 bg-white">
-      <SearchHeader />
+      <SearchHeader />   
       <div className="flex flex-wrap gap-10 items-center self-center mt-11 max-md:mt-10 max-md:max-w-full">
         {categories.map((category, index) => (
           <CategoryCard key={index} {...category} />

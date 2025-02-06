@@ -30,7 +30,7 @@ export default function AuctionLanding() {
           <span className="text-yellow-900">E</span>
           <span className="text-white">xplore</span>{" "}
           <span className="text-yellow-600">P</span>
-          <span className="text-white">roperties</span>
+          <span className="text-white">roperty</span>
         </>
       ),
       description: "Discover your dream property through our extensive collection of premium real estate listings.",

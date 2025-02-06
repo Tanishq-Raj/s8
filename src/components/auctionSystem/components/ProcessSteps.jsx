@@ -1,44 +1,44 @@
 import * as React from "react";
 import ProcessStep from "./ProcessStep";
 
-export default function ProcessSteps() {
-  const steps = [
-    {
-      iconSrc:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/c493260a9422173a2ff2dcfb881d9102f9b97997126a6fa54e411e144943688f?placeholderIfAbsent=true&apiKey=94eb20460e0f412389c7e1a6f1ae6031",
-      title: "Register",
-      extraClasses: "pr-1.5 w-[197px]",
-    },
-    {
-      iconSrc:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/2633e5778d3b724d71aeed627b0daab77bfb9e5e6461ed277e46deb17258c7cb?placeholderIfAbsent=true&apiKey=94eb20460e0f412389c7e1a6f1ae6031",
-      title: "Upload auction details",
-      extraClasses: "w-[191px]",
-    },
-    {
-      iconSrc:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/42e706cbf25568048b7ace5d85898f59c42bf52d0be4e565d302adb8c825adba?placeholderIfAbsent=true&apiKey=94eb20460e0f412389c7e1a6f1ae6031",
-      title: "manage auction listings",
-      extraClasses: "w-[191px]",
-    },
-    {
-      iconSrc:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/34ab0704c8bc005e24a8607330f3e68ec71560e29320db4cbd9799e1ea40a0c1?placeholderIfAbsent=true&apiKey=94eb20460e0f412389c7e1a6f1ae6031",
-      title: "update auction status",
-      extraClasses: "pl-1.5 w-[197px]",
-    },
-  ];
+const steps = [
+  {
+    iconSrc: "/icons/user-plus.svg", // User plus icon 
+    title: "Register",
+    extraClasses: "w-[320px] transform hover:scale-105 transition-transform duration-300",
+  },
+  {
+    iconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/162b4d65daa237d9427c3ab4272457f7e8b758ce9a1b1eb757af11afe41906e7?placeholderIfAbsent=true&apiKey=289b2f6eb1774e2f9cac4324cda58d87", // Cloud upload icon
+    title: "Upload auction details",
+    extraClasses: "w-[320px] transform hover:scale-105 transition-transform duration-300", 
+  },
+  {
+    iconSrc: "/icons/manage-list.svg", // List management icon
+    title: "Manage auction listings",
+    extraClasses: "w-[320px] transform hover:scale-105 transition-transform duration-300",
+  },
+  {
+    iconSrc: "/icons/update-status.svg", // Settings/gear icon
+    title: "Update auction status",
+    extraClasses: "w-[320px] transform hover:scale-105 transition-transform duration-300",
+  },
+  {
+    iconSrc: "/icons/gavel.svg", // Gavel/hammer icon
+    title: "Get Assets auctions near you!",
+    extraClasses: "w-[320px] transform hover:scale-105 transition-transform duration-300",
+  },
+];
 
+export default function ProcessSteps() {
   return (
-    <div className="flex flex-wrap gap-10 items-start self-center mt-24 max-md:mt-10 max-md:max-w-full">
-      {steps.map((step, index) => (
-        <ProcessStep
-          key={index}
-          iconSrc={step.iconSrc}
-          title={step.title}
-          extraClasses={step.extraClasses}
-        />
-      ))}
+    <div className="w-full py-20 px-8">
+      <div className="max-w-[1800px] mx-auto">
+        <div className="flex justify-between items-center">
+          {steps.map((step, index) => (
+            <ProcessStep key={index} iconSrc={step.iconSrc} title={step.title} extraClasses={step.extraClasses} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

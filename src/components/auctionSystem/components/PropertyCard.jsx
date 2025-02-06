@@ -1,6 +1,13 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function PropertyCard({ image, name, location, date, price }) {
+  const navigate = useNavigate();
+
+  const handleSeeDetails = () => {
+    navigate('/property');
+  };
+
   return (
     <div className="flex overflow-hidden flex-col items-start self-stretch px-3 pt-3 pb-8 my-auto bg-white rounded-3xl min-w-[240px] w-[340px] max-md:max-w-full">
       <img
@@ -25,7 +32,8 @@ export default function PropertyCard({ image, name, location, date, price }) {
         </div>
       </div>
       <button 
-        className="flex flex-col justify-center items-center px-4 py-2.5 mt-7 ml-2 leading-none text-white bg-sky-900 rounded-md hover:bg-sky-800 transition-colors"
+        onClick={handleSeeDetails}
+        className="flex flex-col justify-center items-center px-4 py-2.5 mt-7 ml-2 leading-none text-white bg-sky-900 rounded-md hover:bg-sky-800 transition-all duration-300 hover:shadow-lg hover:shadow-sky-100 transform hover:-translate-y-0.5"
         aria-label={`See details for ${name}`}
       >
         <div className="gap-2 self-stretch">See Details</div>

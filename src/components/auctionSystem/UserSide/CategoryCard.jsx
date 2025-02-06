@@ -5,8 +5,21 @@ export function CategoryCard({ title, image, isImageOnly }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    if (title === "Industrial") {
-      navigate("/selectproperty");
+    switch (title) {
+      case "Industrial":
+        navigate("/selectproperty");
+        break;
+      case "Commercial":
+        navigate("/commercial");
+        break;
+      case "Residential":
+        navigate("/residential");
+        break;
+      case "Land":
+        navigate("/land");
+        break;
+      default:
+        break;
     }
   };
 

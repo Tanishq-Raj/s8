@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FormInput } from '../components/auctionSystem/SignInUser/FormInput';
 import { SocialSignInButton } from '../components/auctionSystem/SignInUser/SocialSignInButton';
+import { useNavigate } from 'react-router-dom';
+
 
 const userInputs = [
     { label: "Full Name", placeholder: "Enter your Full Name here", type: "text" },
@@ -57,6 +59,11 @@ export default function SignUpPage() {
         confirmPassword: "",
         phoneNumber: "",
     });
+    const navigate = useNavigate();
+    
+    const handleFormSubmit = () => {
+        navigate("/userside");
+    }
 
     const handleUserTypeChange = (type) => {
         setUserType(type);
@@ -125,118 +132,121 @@ export default function SignUpPage() {
                 </div>
             </div>
 
-            {/* Right side with original form layout */}
+            {/* Right side with form */}
             <div className="w-[600px] flex-none">
-                <div className="relative h-full">
-                    <div className="relative px-4 py-10 bg-white shadow-lg rounded-l-3xl sm:p-20 h-full">
-                        <div className="max-w-md mx-auto">
-                            <div className="divide-y divide-gray-200">
-                                <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-                                    <div className="text-3xl font-bold text-center mb-8 text-[#004663]">
-                                        Create Account
-                                    </div>
-                                    
-                                    {/* User Type Selection */}
-                                    <div className="flex justify-center gap-4 mb-8">
-                                        <button
-                                            onClick={() => handleUserTypeChange("User")}
-                                            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-                                                userType === "User"
-                                                    ? "bg-[#004663] text-white shadow-lg"
-                                                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                                            }`}
-                                        >
-                                            User
-                                        </button>
-                                        <button
-                                            onClick={() => handleUserTypeChange("Bank Officer")}
-                                            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-                                                userType === "Bank Officer"
-                                                    ? "bg-[#004663] text-white shadow-lg"
-                                                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                                            }`}
-                                        >
-                                            Bank Officer
-                                        </button>
-                                    </div>
+                <div className="h-full">
+                    <div className="h-full px-4 py-8 bg-white shadow-lg rounded-l-3xl sm:px-12">
+                        <div className="h-full flex flex-col">
+                            <div className="flex-1">
+                                <div className="text-2xl font-bold text-center mb-8 text-[#004663]">
+                                    Create Account
+                                </div>
+                                
+                                {/* User Type Selection */}
+                                <div className="flex justify-center gap-4 mb-8">
+                                    <button
+                                        onClick={() => handleUserTypeChange("User")}
+                                        className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                                            userType === "User"
+                                                ? "bg-[#004663] text-white shadow-lg"
+                                                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                                        }`}
+                                    >
+                                        User
+                                    </button>
+                                    <button
+                                        onClick={() => handleUserTypeChange("Bank Officer")}
+                                        className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                                            userType === "Bank Officer"
+                                                ? "bg-[#004663] text-white shadow-lg"
+                                                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                                        }`}
+                                    >
+                                        Bank Officer
+                                    </button>
+                                </div>
 
-                                    {/* Progress Steps for Bank Officer */}
-                                    {userType === "Bank Officer" && (
-                                        <div className="flex justify-between mb-8">
-                                            {bankOfficerSteps.map((step, index) => (
+                                {/* Progress Steps for Bank Officer */}
+                                {userType === "Bank Officer" && (
+                                    <div className="flex justify-between mb-8">
+                                        {bankOfficerSteps.map((step, index) => (
+                                            <div
+                                                key={index}
+                                                className="flex flex-col items-center"
+                                            >
                                                 <div
-                                                    key={index}
-                                                    className="flex flex-col items-center"
+                                                    className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
+                                                        index <= currentStep
+                                                            ? "bg-[#004663] text-white"
+                                                            : "bg-gray-200 text-gray-600"
+                                                    }`}
                                                 >
-                                                    <div
-                                                        className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
-                                                            index <= currentStep
-                                                                ? "bg-[#004663] text-white"
-                                                                : "bg-gray-200 text-gray-600"
-                                                        }`}
-                                                    >
-                                                        {index + 1}
-                                                    </div>
-                                                    <div className="text-xs mt-2 text-gray-600">{step.title}</div>
+                                                    {index + 1}
                                                 </div>
-                                            ))}
-                                        </div>
-                                    )}
-
-                                    {/* Form Fields */}
-                                    <div className="space-y-4 max-h-[60vh] overflow-y-auto px-2">
-                                        {userType === "User"
-                                            ? userInputs.map((input, index) => (
-                                                  <div key={index} className="relative">
-                                                      <FormInput
-                                                          {...input}
-                                                          error={formErrors[input.label.toLowerCase().replace(" ", "")]}
-                                                      />
-                                                  </div>
-                                              ))
-                                            : bankOfficerSteps[currentStep].inputs.map((input, index) => (
-                                                  <div key={index} className="relative">
-                                                      <FormInput {...input} />
-                                                  </div>
-                                              ))}
-                                    </div>
-
-                                    {/* Action Buttons */}
-                                    <div className="mt-8 space-y-4">
-                                        <button
-                                            onClick={userType === "Bank Officer" ? handleNextStep : validateForm}
-                                            className="w-full py-3 bg-[#004663] text-white rounded-lg font-semibold hover:bg-sky-900 transition-colors duration-200"
-                                        >
-                                            {userType === "Bank Officer"
-                                                ? currentStep === bankOfficerSteps.length - 1
-                                                    ? "Complete Registration"
-                                                    : "Next Step"
-                                                : "Sign Up"}
-                                        </button>
-
-                                        {/* Social Sign-in */}
-                                        <div className="relative my-6">
-                                            <div className="absolute inset-0 flex items-center">
-                                                <div className="w-full border-t border-gray-300"></div>
+                                                <div className="text-xs mt-1">{step.title}</div>
                                             </div>
-                                            <div className="relative flex justify-center text-sm">
-                                                <span className="px-2 bg-white text-gray-500">Or continue with</span>
-                                            </div>
-                                        </div>
-
-                                        <div className="space-y-3">
-                                            {socialButtons.map((button, index) => (
-                                                <SocialSignInButton key={index} {...button} />
-                                            ))}
-                                        </div>
-
-                                        <div className="text-center mt-6">
-                                            <span className="text-gray-600">Already have an account? </span>
-                                            <a href="/signin" className="text-[#004663] font-semibold hover:text-sky-900">
-                                                Sign In
-                                            </a>
-                                        </div>
+                                        ))}
                                     </div>
+                                )}
+
+                                {/* Form Inputs */}
+                                <div className="space-y-6">
+                                    {formInputs.map((input, index) => (
+                                        <FormInput
+                                            key={index}
+                                            {...input}
+                                            error={formErrors[input.label.toLowerCase().replace(/\s+/g, '')]}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Action Buttons */}
+                            <div className="mt-8 space-y-4">
+                                <button
+                                    onClick={userType === "Bank Officer" ? handleNextStep : validateForm ? handleFormSubmit : null}
+                                    // onClick={() => navigate('/userside')}
+                                    // onClick={() => {
+                                    //     if (userType === "Bank Officer") {
+                                    //       handleNextStep();
+                                    //     } else {
+                                    //       validateForm();
+                                    //     }
+                                    //     handleFormSubmit();
+                                    //   }}
+                                      
+                                    
+                                    className="w-full py-3 bg-[#004663] text-white rounded-lg font-semibold hover:bg-sky-900 transition-colors duration-200"
+                                >
+                                    {userType === "Bank Officer"
+                                    
+                                        ? currentStep === bankOfficerSteps.length - 1
+                                            ? "Complete Registration"
+                                            : "Next Step"
+                                        : "Sign Up"}
+                                </button>
+
+                                {/* Social Sign-in */}
+                                <div className="relative my-6">
+                                    <div className="absolute inset-0 flex items-center">
+                                        <div className="w-full border-t border-gray-300"></div>
+                                    </div>
+                                    <div className="relative flex justify-center text-sm">
+                                        <span className="px-2 bg-white text-gray-500">Or continue with</span>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-3">
+                                    {socialButtons.map((button, index) => (
+                                        <SocialSignInButton key={index} {...button} />
+                                    ))}
+                                </div>
+
+                                <div className="text-center mt-6">
+                                    <span className="text-gray-600">Already have an account? </span>
+                                    <a href="/signin" className="text-[#004663] font-semibold hover:text-sky-900">
+                                        Sign In
+                                    </a>
                                 </div>
                             </div>
                         </div>

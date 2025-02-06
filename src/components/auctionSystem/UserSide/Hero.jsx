@@ -21,7 +21,7 @@ export function Hero() {
           <br />
           purchase or rental of real estate.
         </div>
-        <div className="relative px-7 py-0.5 mt-16 text-sm font-medium leading-9 uppercase whitespace-nowrap bg-white rounded-2xl text-slate-900 tracking-[2.8px] max-md:px-5 max-md:mt-10">
+        <div className="relative px-7 py-0.5 mt-16 text-sm font-medium leading-9 uppercase whitespace-nowrap bg-white rounded-[16px_16px_0px_0px] text-slate-900 tracking-[2.8px] max-md:px-5 max-md:mt-10">
           Auctions
         </div>
         <CitySelector />
