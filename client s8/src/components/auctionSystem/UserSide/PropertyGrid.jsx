@@ -15,7 +15,7 @@ export function PropertyGrid() {
     <>
       <div className="flex flex-wrap gap-5 justify-between mt-14 w-full font-medium max-w-[1325px] max-md:mt-10 max-md:max-w-full">
         <div className="text-4xl text-slate-900">Recently Added</div>
-        <button className="my-auto text-2xl text-sky-500">See all</button>
+        {/* <button className="my-auto text-2xl text-sky-500">See all</button> */}
       </div>
       <div className="mt-8 w-full max-w-[1333px] max-md:max-w-full">
         {[0, 1, 2].map((row) => (

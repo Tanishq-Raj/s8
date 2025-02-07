@@ -82,7 +82,7 @@ export default function SearchHeader() {
                     </label>
                     <span className="text-sm text-neutral-300">
                       {formatPrice(priceRange[1])}
-                    </span>
+                    </span>+
                   </div>
                   <input
                     type="range"

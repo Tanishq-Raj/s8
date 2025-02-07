@@ -7,7 +7,7 @@ function PropertyCard({ image, title, location, bidPrice, bank }) {
 
 
   const handleSeeDetails = () => {
-    
+    window.scrollTo(0, 0);
     navigate('/property');
   };
 

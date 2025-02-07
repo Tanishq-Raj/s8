@@ -68,8 +68,13 @@ export default function SignUpPage() {
     const navigate = useNavigate();
     
     const handleFormSubmit = () => {
+        window.scrollTo(0, 0);
         navigate("/usersideprime");
     }
+
+    // const handleBankOfficer = () => {
+    //     window.location.href = 'http://localhost:3001';
+    // }
 
     const handleUserTypeChange = (type) => {
         setUserType(type);
@@ -79,6 +84,8 @@ export default function SignUpPage() {
     const handleNextStep = () => {
         if (currentStep < bankOfficerSteps.length - 1) {
             setCurrentStep(currentStep + 1);
+        }else {
+            window.location.href = 'http://localhost:5173';
         }
     };
 

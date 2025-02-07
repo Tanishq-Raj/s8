@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
 import SearchBar from "./components/SearchBar";
 import ProcessSteps from "./components/ProcessSteps";
@@ -9,6 +10,7 @@ import ContactInfo from "./components/ContactInfo";
 import PropertyAuctions from "./components/PropertyAuctions";
 
 export default function AuctionLanding() {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
@@ -183,7 +185,12 @@ export default function AuctionLanding() {
               </div>
             </div>
             <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-              <button className="relative gap-5 px-9 py-5 mt-1.5 text-3xl font-bold text-white border-2 border-white border-solid max-md:px-5 max-md:mt-10">
+              <button 
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigate('/sign-up');
+                }}
+                className="relative gap-5 px-9 py-5 mt-1.5 text-3xl font-bold text-white border-2 border-white border-solid max-md:px-5 max-md:mt-10 hover:bg-white hover:text-sky-900 transition-all duration-300">
                 Register to get started
               </button>
             </div>

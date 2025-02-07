@@ -143,7 +143,7 @@ export default function PropertyAuctions() {
             <div className="grow max-md:mt-10 max-md:max-w-full">
               <div className="flex flex-col">
                 <div className="text-3xl font-bold text-sky-900 mb-4">
-                  Locate <span className="text-neutral-200">us</span>
+                  Locate us 
                 </div>
                 <div className="w-full h-[500px] bg-sky-900">
                   <iframe

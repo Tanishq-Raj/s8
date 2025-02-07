@@ -1,7 +1,10 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropertyCard from '../components/auctionSystem/components/PropertyCard';
+import { toast } from 'react-toastify';
 
 const Assets = () => {
+  const navigate = useNavigate();
   const scrollContainerRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -76,7 +79,20 @@ const Assets = () => {
         <div className="flex flex-col pl-20 pr-20 mt-7 w-full max-md:pl-5 max-md:max-w-full">
           <div className="flex flex-wrap gap-5 justify-between w-full text-sky-900 max-w-[1346px] max-md:max-w-full">
             <div className="text-3xl leading-none font-[250]">Latest Assets</div>
-            <button className="flex gap-2 justify-center items-center px-6 py-2 rounded-2xl bg-sky-900 bg-opacity-10 hover:bg-opacity-20 transition-all duration-300">
+            <button 
+              onClick={() => {
+                // Check if user is logged in (you might want to replace this with your actual auth check)
+                const isLoggedIn = localStorage.getItem('user') || sessionStorage.getItem('user');
+                if (!isLoggedIn) {
+                  toast.error('Please sign in to view all results');
+                  window.scrollTo(0, 0);
+                  navigate('/sign-up');
+                  return;
+                }
+                // Handle the "See all result" action for logged in users
+                // Add your logic here
+              }}
+              className="flex gap-2 justify-center items-center px-6 py-2 rounded-2xl bg-sky-900 bg-opacity-10 hover:bg-opacity-20 transition-all duration-300">
               <div className="self-stretch my-auto text-lg leading-none text-center rounded-lg text-zinc-900">
                 See all result
               </div>

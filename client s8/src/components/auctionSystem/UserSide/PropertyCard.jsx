@@ -5,6 +5,7 @@ export function PropertyCard({ image }) {
   const navigate = useNavigate();
 
   const handlePriceClick = () => {
+    window.scrollTo(0, 0);
     navigate('/property');
   };
 

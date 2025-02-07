@@ -5,6 +5,7 @@ export default function PropertyCard({ image, name, location, date, price }) {
   const navigate = useNavigate();
 
   const handleSeeDetails = () => {
+    window.scrollTo(0, 0);
     navigate('/property');
   };
 

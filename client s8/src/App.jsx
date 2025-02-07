@@ -15,10 +15,13 @@ import Assets from './pages/Assets'
 // import AuctionLayout4 from './components/auctionSystem/UserSide4/AuctionLayout'
 import Property from './components/auctionSystem/MyProperty/AuctionLayout'
 import UserSideP from './components/auctionSystem/UsersidePrime/AuctionLayout'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
     <>
+    <ToastContainer position="top-right" autoClose={3000} />
     <NavigationBar/>
     <Routes>
       <Route path="/" element={<AuctionLanding/>}/>

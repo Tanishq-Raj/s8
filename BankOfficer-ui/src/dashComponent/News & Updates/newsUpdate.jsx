@@ -16,7 +16,7 @@ const News = () => {
         <button
           className="exploreNowButton"
           // onClick={() => (window.location.href = "https://example.com")}
-          onClick={() => navigate("/")}
+          onClick={() => window.location.href = 'http://localhost:5174'}
         >
          Home Page
         </button>
