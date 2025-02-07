@@ -16,7 +16,7 @@ const News = () => {
         <button
           className="exploreNowButton"
           // onClick={() => (window.location.href = "https://example.com")}
-          onClick={() => window.location.href = 'http://localhost:5174'}
+          onClick={() => window.location.href = 'https://s8-client.vercel.app/'}
         >
          Home Page
         </button>

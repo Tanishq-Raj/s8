@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./propertyCardList.scss";
+import "./PropertyCardList.scss";
 import properties from "../../dummyData";
 import { PropertyCards } from "../auction Cards/PropertyCards";
 

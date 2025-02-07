@@ -14,7 +14,7 @@ export const UserAvatar = ({ imageSrc, name, address, size = 'small' }) => {
   const handleLogout = () => {
     // Perform logout actions here (e.g., clearing tokens, state)
     localStorage.removeItem('authToken'); // Example: Clearing token
-    window.location.href = 'http://localhost:5174'; // Redirect to login page
+    window.location.href = 'https://s8-client.vercel.app/'; // Redirect to login page
   };
 
   return (
