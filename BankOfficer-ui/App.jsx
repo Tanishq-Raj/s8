@@ -35,13 +35,13 @@ function App() {
     <BrowserRouter>
       <Routes>
       {/* Routes with Navbar USER SIDE PAGES */}
-      <Route path="/sign-up" element={<SignUpPage/>} />
-      <Route path="/" element={<LayoutWithNavbar><AuctionLanding /></LayoutWithNavbar>} />
+      {/* <Route path="/sign-up" element={<SignUpPage/>} />
+      <Route path="/" element={<LayoutWithNavbar><AuctionLanding /></LayoutWithNavbar>} /> */}
 
          {/* Routes without Navbar (OFFICER DASHBORD PAGES) */} 
          
         
-       <Route path="/bankOfficer" element={<Profilepage/>} />
+       <Route path="/" element={<Profilepage/>} />
        <Route path="/myAssets" element={<MyAssets/>} />
        <Route path="/profile" element={<Profile2 />} />
        <Route path="/auction" element={<Auction />} />

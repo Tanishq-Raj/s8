@@ -13,7 +13,7 @@ const Sidebar = () => {
     {
       icon: '/profilePageLogo.svg',
       text: 'Profile',
-      route: '/bankOfficer',
+      route: '/',
     },
     {
       icon: '/dashboard.svg',
@@ -34,7 +34,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="logo-container">
-        <Link to="/bankOfficer">
+        <Link to="/">
           <div className="logo-circle">
      
               <span className="logo-text">S8</span>
