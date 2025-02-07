@@ -44,6 +44,11 @@ const bankOfficerSteps = [
     },
 ];
 
+const signInInputs = [
+    { label: "Email", placeholder: "Enter your Email here", type: "email" },
+    { label: "Password", placeholder: "Enter your Password", type: "password" },
+];
+
 const socialButtons = [
     { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/8bc5b28e34b89399a5181e0b1ad025dca906bce676746acf663a21997d16f714?placeholderIfAbsent=true&apiKey=2b64ceff962d4ae184f534c4b0acd108", text: "Sign in with Google" },
     { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/ffe4e42a43bb56a2ba547b9efe4b4b55da2566487fabe8ea05c325740412c865?placeholderIfAbsent=true&apiKey=2b64ceff962d4ae184f534c4b0acd108", text: "Sign in with Facebook" },
@@ -52,6 +57,7 @@ const socialButtons = [
 export default function SignUpPage() {
     const [userType, setUserType] = useState("User");
     const [currentStep, setCurrentStep] = useState(0);
+    const [isSignIn, setIsSignIn] = useState(false);
     const [formErrors, setFormErrors] = useState({
         fullName: "",
         email: "",
@@ -104,7 +110,7 @@ export default function SignUpPage() {
         return isValid;
     };
 
-    const formInputs = userType === "User" ? userInputs : bankOfficerSteps[currentStep].inputs;
+    const formInputs = isSignIn ? signInInputs : (userType === "User" ? userInputs : bankOfficerSteps[currentStep].inputs);
 
     return (
         <div className="min-h-screen bg-[#004663] flex items-stretch">
@@ -139,35 +145,37 @@ export default function SignUpPage() {
                         <div className="h-full flex flex-col">
                             <div className="flex-1">
                                 <div className="text-2xl font-bold text-center mb-8 text-[#004663]">
-                                    Create Account
+                                    {isSignIn ? "Sign In" : "Create Account"}
                                 </div>
                                 
-                                {/* User Type Selection */}
-                                <div className="flex justify-center gap-4 mb-8">
-                                    <button
-                                        onClick={() => handleUserTypeChange("User")}
-                                        className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-                                            userType === "User"
-                                                ? "bg-[#004663] text-white shadow-lg"
-                                                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                                        }`}
-                                    >
-                                        User
-                                    </button>
-                                    <button
-                                        onClick={() => handleUserTypeChange("Bank Officer")}
-                                        className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-                                            userType === "Bank Officer"
-                                                ? "bg-[#004663] text-white shadow-lg"
-                                                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                                        }`}
-                                    >
-                                        Bank Officer
-                                    </button>
-                                </div>
+                                {!isSignIn && (
+                                    /* User Type Selection */
+                                    <div className="flex justify-center gap-4 mb-8">
+                                        <button
+                                            onClick={() => handleUserTypeChange("User")}
+                                            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                                                userType === "User"
+                                                    ? "bg-[#004663] text-white shadow-lg"
+                                                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                                            }`}
+                                        >
+                                            User
+                                        </button>
+                                        <button
+                                            onClick={() => handleUserTypeChange("Bank Officer")}
+                                            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                                                userType === "Bank Officer"
+                                                    ? "bg-[#004663] text-white shadow-lg"
+                                                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                                            }`}
+                                        >
+                                            Bank Officer
+                                        </button>
+                                    </div>
+                                )}
 
                                 {/* Progress Steps for Bank Officer */}
-                                {userType === "Bank Officer" && (
+                                {!isSignIn && userType === "Bank Officer" && (
                                     <div className="flex justify-between mb-8">
                                         {bankOfficerSteps.map((step, index) => (
                                             <div
@@ -204,26 +212,17 @@ export default function SignUpPage() {
                             {/* Action Buttons */}
                             <div className="mt-8 space-y-4">
                                 <button
-                                    onClick={userType === "Bank Officer" ? handleNextStep : validateForm ? handleFormSubmit : null}
-                                    // onClick={() => navigate('/userside')}
-                                    // onClick={() => {
-                                    //     if (userType === "Bank Officer") {
-                                    //       handleNextStep();
-                                    //     } else {
-                                    //       validateForm();
-                                    //     }
-                                    //     handleFormSubmit();
-                                    //   }}
-                                      
-                                    
+                                    onClick={isSignIn ? handleFormSubmit : userType === "Bank Officer" ? handleNextStep : validateForm ? handleFormSubmit : null}
                                     className="w-full py-3 bg-[#004663] text-white rounded-lg font-semibold hover:bg-sky-900 transition-colors duration-200"
                                 >
-                                    {userType === "Bank Officer"
-                                    
-                                        ? currentStep === bankOfficerSteps.length - 1
-                                            ? "Complete Registration"
-                                            : "Next Step"
-                                        : "Sign Up"}
+                                    {isSignIn 
+                                        ? "Sign In"
+                                        : userType === "Bank Officer"
+                                            ? currentStep === bankOfficerSteps.length - 1
+                                                ? "Complete Registration"
+                                                : "Next Step"
+                                            : "Sign Up"
+                                    }
                                 </button>
 
                                 {/* Social Sign-in */}
@@ -243,10 +242,15 @@ export default function SignUpPage() {
                                 </div>
 
                                 <div className="text-center mt-6">
-                                    <span className="text-gray-600">Already have an account? </span>
-                                    <a href="/signin" className="text-[#004663] font-semibold hover:text-sky-900">
-                                        Sign In
-                                    </a>
+                                    <span className="text-gray-600">
+                                        {isSignIn ? "Don't have an account? " : "Already have an account? "}
+                                    </span>
+                                    <button 
+                                        onClick={() => setIsSignIn(!isSignIn)}
+                                        className="text-[#004663] font-semibold hover:text-sky-900"
+                                    >
+                                        {isSignIn ? "Sign Up" : "Sign In"}
+                                    </button>
                                 </div>
                             </div>
                         </div>
