@@ -147,7 +147,7 @@ export default function PropertyAuctions() {
                 </div>
                 <div className="w-full h-[500px] bg-sky-900">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.817184432933!2d103.85661531475415!3d1.2986770990563598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19a1c4aa7137%3A0x7c00a3430a78c10!2sMarina%20Bay%20Sands%20Singapore!5e0!3m2!1sen!2sin!4v1627984817185!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.4538030887393!2d72.82579849999999!3d18.955555599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce17bb66695d%3A0x3bf6d99cbddc25e2!2sSabu%20Building%2C%20Cawasji%20Patel%20Tank%20Rd%2C%20Charni%20Road%20East%2C%20Cawasji%20Patel%20Tank%2C%20Bhuleshwar%2C%20Mumbai%2C%20Maharashtra%20400004!5e0!3m2!1sen!2sin!4v1738952599779!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

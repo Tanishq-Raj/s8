@@ -17,6 +17,7 @@ import Property from './components/auctionSystem/MyProperty/AuctionLayout'
 import UserSideP from './components/auctionSystem/UsersidePrime/AuctionLayout'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { Contact } from './components/auctionSystem/components/Contact'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
       <Route path="/land" element={<AuctionLayout4 />} /> */}
       <Route path="/property" element={<Property/>}/>
       <Route path="/usersideprime" element={<UserSideP/>}/>
+      <Route path="/contact" element={<Contact/>}/>
     </Routes>
       <Footer/>
     </>

@@ -2,7 +2,6 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
-import SearchBar from "./components/SearchBar";
 import ProcessSteps from "./components/ProcessSteps";
 import PropertyCard from "./components/PropertyCard";
 import ContactForm from "./components/ContactForm";
@@ -112,9 +111,7 @@ export default function AuctionLanding() {
                 alt={`Slide ${currentSlide + 1}`}
                 className="object-cover absolute inset-0 size-full transition-opacity duration-500"
               />
-              <div className="relative z-10">
-                <SearchBar />
-              </div>
+              {/* SearchBar removed from here */}
             </div>
           </div>
           <div className="flex flex-col ml-5 w-[36%] max-md:ml-0 max-md:w-full">

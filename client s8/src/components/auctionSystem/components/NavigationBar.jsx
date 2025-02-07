@@ -32,6 +32,29 @@ export default function NavigationBar() {
         />
         <div className="self-start mt-11 max-md:mt-10">s8</div>
       </div>
+      
+      {/* Search Bar */}
+      <div className="flex-1 max-w-md mx-4 mt-5">
+        <form className="flex overflow-hidden relative gap-5 px-5 py-3 border border-solid bg-white border-zinc-300 rounded-[50px] w-full max-md:px-3 max-md:py-2">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b10ef0b9ed50f347e507ce263da543df27eb52dce5de8cd66bf0b6544ba8a03?placeholderIfAbsent=true&apiKey=94eb20460e0f412389c7e1a6f1ae6031"
+            alt="Search Icon"
+            className="object-contain shrink-0 w-6 aspect-square max-md:w-4"
+          />
+          <label htmlFor="searchInput" className="sr-only">
+            Search for auctions
+          </label>
+          <input
+            type="search"
+            id="searchInput"
+            className="flex-auto my-auto bg-transparent text-black border-none focus:outline-none max-md:text-sm"
+            placeholder="Search for auctions near you ...."
+            aria-label="Search for auctions near you"
+          />
+        </form>
+      </div>
+
       <div className="flex my-auto text-base text-right text-black max-md:max-w-full">
         <div className="flex flex-wrap flex-auto gap-10 justify-between items-center py-2.5 w-full max-md:max-w-full">
           {navItems.map((item, index) => (
@@ -49,7 +72,7 @@ export default function NavigationBar() {
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/e0a294f996ea60c74ea8b67cc5b04be9dc56446b976248136facd6ce324cb442?placeholderIfAbsent=true&apiKey=94eb20460e0f412389c7e1a6f1ae6031"
             alt="User Profile Icon"
-            className="object-contain shrink-0 self-stretch my-auto w-8 aspect-square"
+            className="object-contain self-start shrink-0 w-12 aspect-square cursor-pointer"
           />
           <NavLink to='/sign-up' className="gap-2.5 self-stretch px-6 py-2.5 my-auto font-semibold text-white bg-sky-900 rounded-[55px] max-md:px-5">
             Sign in
