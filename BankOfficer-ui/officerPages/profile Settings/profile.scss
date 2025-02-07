@@ -1,0 +1,260 @@
+.profile {
+  display: flex;
+  height: 100vh;
+  background-color: #f9f9f9;
+  font-family: "Poppins", serif;
+     
+
+  .sideContainer2 {
+    flex: 1;
+    // background-color: #081c15; // Sidebar background
+    min-width: 250px; /* Optional: Minimum width for sidebar */
+
+  }
+
+  .mainContent {
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+
+    .mainWrapper {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background-color: #ffffff;
+      height: 100%;
+
+      .profileLayout {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        gap: 20px;
+
+        .profileLeftContainer,
+        .profileRightContainer {
+          flex: 1;
+          // background-color: #d8f3dc;
+          // padding: 20px;
+          // border-radius: 10px;
+          // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+          .avatarSection {
+              display: flex;
+              flex-direction: column;
+              align-items: left; /* Align image and text vertically */
+              gap: 15px; /* Space between the image and text */
+
+              .avatarAndDetails {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 20px; /* Space between image and details */
+              }
+            
+
+            .avatarImage {
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              margin-bottom: 15px;
+              // border: 2px solid #74c69d;
+            }
+
+            .userDetails {
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 15px;
+
+              .userName {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #081c15;
+              }
+
+              .userRole {
+                font-size: 1.4rem;
+                color: gray;
+              }
+
+              .userCompany {
+                font-size: 0.9rem;
+                color: gray;
+              }
+            }
+
+            .uploadButton {
+              margin-top: 10px;
+              background-color: #004663;
+              border: none;
+              color: #ffffff;
+              padding: 10px 15px;
+              border-radius: 5px;
+              width: 50%;
+              cursor: pointer;
+
+              &:hover {
+                background-color: #023b53;
+              }
+            }
+          }
+
+
+
+          .section {
+            margin-top: 20px;
+
+            .sectionTitle {
+              font-size: 1.2rem;
+              font-weight: bold;
+              margin-bottom: 15px;
+              color: black;
+              position: relative; // Ensures the pseudo-element is positioned relative to this container
+              width: 100%; // Adjust width as needed
+              margin: auto; // Centers it within parent container
+
+             &::after {
+             content: "";
+             position: absolute;
+             bottom: 0;
+             left: 0; // Align to the left instead of 50%
+             width: 100%; // Adjust width as needed
+             height:  1.8px ; // Border thickness
+             background-color: #bbb; // Border color
+             }
+            }
+
+            .inputGroup {
+              margin-top: 10px;
+              margin-bottom: 15px;
+
+              .label {
+                display: block;
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+                color: rgb(24, 24, 24);
+              }
+
+              .textInput {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid gray;
+                border-radius: 5px;
+
+                &:focus {
+                  outline: none;
+                  border-color: #74c69d;
+                }
+              }
+
+              .textArea {
+                width: 100%;
+                height: 80px;
+                padding: 10px;
+                border: 1px solid #b7e4c7;
+                border-radius: 5px;
+
+                &:focus {
+                  outline: none;
+                  border-color: #74c69d;
+                }
+              }
+            }
+
+            .dualInputGroup {
+              display: flex;
+              gap: 10px;
+
+              .inputGroup {
+                flex: 1;
+              }
+            }
+          }
+        }
+        
+        .profileRightContainer {
+          margin-top: 184px;
+          .actionButtons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        
+            .cancelButton, .saveButton {
+              width: 100px; /* Adjust the width of both buttons */
+              padding: 10px 15px; /* Adjust padding if needed */
+              border-radius: 5px;
+              cursor: pointer;
+              font-size: 16px; /* Optional: Adjust font size for consistency */
+              text-align: center;
+            }
+        
+            .cancelButton {
+              background-color: transparent;
+              border: 1px solid #004663;
+              color: #004663;
+              transition: background-color 0.3s ease, color 0.3s ease;
+        
+              &:hover {
+                background-color: #023b53;
+                color: #fff;
+              }
+            }
+        
+            .saveButton {
+              background-color: #004663;
+              border: none;
+              color: #ffffff;
+        
+              &:hover {
+                background-color: #023b53;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.separator2 {
+  width: 95%; /* Adjust width here */
+  height: 1px; /* Line thickness */
+  background-color: gray; /* Line color */
+  margin-top: 7px;  
+}
+
+
+.popupMessage {
+  position: fixed;
+  top: 20px;
+  left: 55%;
+  transform: translateX(-50%);
+  background: #52b788;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  font-weight: bold;
+  animation: fadeInOut 2s ease-in-out;
+
+  // @keyframes fadeInOut {
+  //   0% {
+  //     opacity: 0;
+  //     transform: translateX(-50%) translateY(10px);
+  //   }
+  //   10% {
+  //     opacity: 1;
+  //     transform: translateX(-50%) translateY(0);
+  //   }
+  //   90% {
+  //     opacity: 1;
+  //     transform: translateX(-50%) translateY(0);
+  //   }
+  //   100% {
+  //     opacity: 0;
+  //     transform: translateX(-50%) translateY(-10px);
+  //   }
+  // }
+}
