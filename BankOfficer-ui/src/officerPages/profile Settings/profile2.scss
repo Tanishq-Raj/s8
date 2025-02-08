@@ -2,8 +2,8 @@
     display: flex;
     height: 100vh;
     background-color: #f9f9f9;
-      font-family: "Roboto";
-      font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
       font-style: normal;
     
   
@@ -37,13 +37,15 @@
         border: 1px solid #ddd;
         border-radius: 10px;
         width: 250px;
+        height: 300px;
         text-align: center;
       }
   
       .avatar {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
+        border:2px solid #004663;
         object-fit: cover;
       }
   
@@ -55,7 +57,7 @@
         font-size: 14px;
         border-radius: 5px;
         cursor: pointer;
-        margin-top: 10px;
+        margin-top: 25px;
         width: 100%;
       }
   
@@ -73,10 +75,10 @@
         border-radius: 10px;
         border: 1px solid #ddd;
         width: 100%;
-        height: 260px;
+        height: 300px;
         min-height: 260px; /* Ensures minimum height */
-  max-height: 260px; /* Prevents height increase */
-  overflow-y: auto; /* Allows scrolling within the section */
+        max-height: 300px; /* Prevents height increase */
+        overflow-y: auto; /* Allows scrolling within the section */
       }
   
       .info {
@@ -87,9 +89,26 @@
         overflow: hidden;
         white-space: nowrap; /* Prevents content from wrapping */
         text-overflow: ellipsis; /* Adds "..." if content overflows */
+      margin-left: 10px;
       }
   
-      .info h4 {
+      .info2 {
+        // flex: 1;
+        font-size: 16px;
+        // color: #333;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow: hidden;
+        overflow-wrap: break-word; // Ensures text wraps correctly
+        white-space: normal; // Allows text to break into multiple lines
+        word-break: break-word; // Ensures words break properly if too long
+        max-width: 100%; // Ensures it doesn't exceed container width
+        line-height: 1.5; // Improves readability
+        margin-left: -20px;
+      }
+
+      .info h4 , .info2 h4 {
         font-size: 18px;
         color: gray;
         margin-bottom: 10px;
@@ -98,12 +117,12 @@
   
       .info p {
         margin: 0;
-  font-size: 16px;
-  color: #333;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 100%;
+        font-size: 16px;
+        color: #333;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 100%;
       }
   
       .info strong {
@@ -119,26 +138,34 @@
         border-radius: 10px;
         border: 1px solid #ddd;
         background: white;
+        // margin:30px;
         margin-left: 20px;
         margin-right: 40px;
+        margin-bottom: 20px;
     }
 
     .form-title {
         font-size: 20px;
         font-weight: bold;
-        color: #444;
+        color: #555;
         margin-bottom: 15px;
+        text-decoration: underline; // Adds underline
+        text-underline-offset: 6px; // Adjusts spacing from text
+        text-decoration-thickness: 2px; // Controls thickness of underline
     }
 
     .form-section {
         margin-bottom: 20px;
+        margin-left: 60px;
     }
 
     .form-section h4 {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: bold;
         color: #333;
         margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: -30px;
     }
 
     .form-row {
@@ -153,7 +180,7 @@
         flex-direction: column;
     }
 
-    .form-group label {
+    .form-group label{
         font-size: 14px;
         font-weight: bold;
         color: #555;
@@ -165,37 +192,18 @@
     .form-group input {
         padding: 10px;
         border: 1px solid #ccc;
-        border-radius: 5px;
+        border-radius: 10px;
         font-size: 14px;
         background-color: #f0f0f0;
         width: 70%;
       }
-    
-        // label {
-        //     font-size: 14px;
-        //     font-weight: bold;
-        //     color: #555;
-        //     margin-bottom: 5px;
-        //   }
-
-          // input {
-          //   padding: 10px;
-          //   border: 1px solid #ccc;
-          //   border-radius: 5px;
-          //   font-size: 14px;
-          //   background-color: #f0f0f0;
-          //   width: 100%;
-          // }
     }
-
-            
-          
 
     .mobile-input {
         display: flex;
         align-items: center;
         gap: 5px;
-        width: 520px;
+        width: 480px;
     }
 
     .country-code {
@@ -203,30 +211,27 @@
         padding: 10px;
         font-size: 14px;
         border: 1px solid #ccc;
-        border-radius: 5px 0 0 5px;
-        border-right: none;
+        border-radius: 10px;
+        // border-right: none;
+     }
     }
 
-    input {
-        border-radius: 0 5px 5px 0;
-        border-left: none;
-      }
-
-    }
-  // }
-  
-
- .save-btn {
-        display: block;
-        background-color: #004663;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
+//Button
+.save-btn {
+  display: block;
+  background-color: #004663;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-left: auto;  // Pushes button to the right
+  display: flex;  // Ensures proper alignment
+  justify-content: flex-end; // Aligns button to the right inside a flex container
+  margin-right: 180px;
 
         &:hover {
           background-color: #00324a;
@@ -265,19 +270,56 @@
 
      textarea{
       width: 100%; // Makes the input field stretch fully
-      max-width: 410px; // Ensures it doesn't get too wide
+      max-width: 400px; // Ensures it doesn't get too wide
       min-width: 400px; // Prevents it from becoming too small
       padding: 10px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 10px;
       font-size: 14px;
       background-color: #f0f0f0;
 
       &:focus {
-        outline: none;
-        border-color: black;
-        // background-color: white;
+        border-color:2px #004663;
       }
     }
   }
+}
+
+// Conform new pass
+.form-pass {
+  display: flex;
+  flex-direction: column;
+  width:388px; // Match other input widths
+  gap: 5px; // Consistent spacing
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+  }
+
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px; // Matches other inputs
+    font-size: 14px;
+    background-color: #f0f0f0;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      border-color:2px #004663;
+    
+    }
+  }
+}
+
+//line style
+.custom-hr {
+  width: 95%;  // Adjust width as needed
+  border: none;
+  height: 1px;
+  background-color: #ccc;  // Change color if needed
+  margin: 20px auto;  // Center the line
 }

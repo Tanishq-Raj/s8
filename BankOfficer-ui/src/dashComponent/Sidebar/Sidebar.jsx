@@ -1,13 +1,10 @@
 import './Sidebar.scss';
-import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
 
-  const handleItemClick = (index) => {
-    setActiveIndex(index); // Set the clicked item's index as active
-  };
+  const Sidebar = () => {
+    const location = useLocation(); // Get current route
 
   const menuItems = [
     {
@@ -21,7 +18,7 @@ const Sidebar = () => {
     },
     {
       icon: '/myAsset.svg',
-      text: 'My Assets',
+      text: 'Assets',
       route: '/myAssets',
     },
     {
@@ -45,11 +42,7 @@ const Sidebar = () => {
       <div className="separator"></div> {/* Add the separator */}
       <ul className="menu">
         {menuItems.map((item, index) => (
-          <li
-            key={index}
-            className={`menu-item ${activeIndex === index ? 'active' : ''}`}
-            onClick={() => handleItemClick(index)}
-          >
+          <li key={index} className={`menu-item ${location.pathname === item.route ? 'active' : ''}`}>
             <Link to={item.route} className="menu-link">
               <img src={item.icon} alt={item.text} className="icon" />
               <div className="text">{item.text}</div>

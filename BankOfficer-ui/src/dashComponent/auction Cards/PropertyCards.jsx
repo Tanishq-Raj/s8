@@ -1,3 +1,5 @@
+
+// Using for My Asset List
 import "./propertyCards.scss";
 import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';

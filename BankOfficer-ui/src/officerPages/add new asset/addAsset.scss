@@ -1,5 +1,5 @@
 .addAsset {
-  font-family: "Roboto";
+  font-family: "Poppins", sans-serif;
 
     display: flex;
     // height: 100vh;
@@ -37,9 +37,88 @@
         min-width: 50%; // Ensure equal width
       }
 
-      .asset-form {
+      .formWrapper {
         flex: 1;
         min-width: 50%; // Ensure equal width
+      
+        // .breadcrumb {
+        //   display: flex;
+        //   justify-content: space-between;
+        //   margin-bottom: 20px;
+        //   padding-bottom: 10px;
+        //   border-bottom: 2px solid #e0e0e0;
+      
+        //   span {
+        //     font-weight: 500;
+        //     color: #999;
+        //     cursor: pointer;
+      
+        //     &.active {
+        //       color: #0466c8;
+        //       font-weight: 700;
+        //       border-bottom: 2px solid #0466c8;
+        //       padding-bottom: 5px;
+        //     }
+        //   }
+        // }
+      
+        .formContent {
+          .formSection {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+      
+            h3 {
+              font-size: 18px;
+              color: #333;
+              margin-bottom: 10px;
+            }
+      
+            input,
+            select,
+            textarea {
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+            }
+      
+            textarea {
+              resize: none;
+              height: 80px;
+            }
+          }
+        }
+      
+        .buttonContainer {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+      
+          .btn {
+            background-color: #0466c8;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+      
+            &:hover {
+              background-color: #0353a4;
+            }
+          }
+      
+          .submit {
+            background-color: #2d6a4f;
+      
+            &:hover {
+              background-color: #1b4332;
+            }
+          }
+        }
+
       }
     }
   }
