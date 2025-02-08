@@ -85,7 +85,7 @@ export default function SignUpPage() {
         if (currentStep < bankOfficerSteps.length - 1) {
             setCurrentStep(currentStep + 1);
         }else {
-            window.location.href = 'http://localhost:5173';
+            window.location.href = 'https://s8-chi.vercel.app/';
         }
     };
 
