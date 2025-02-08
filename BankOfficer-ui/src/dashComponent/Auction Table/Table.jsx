@@ -117,7 +117,7 @@ const AuctionHistory = () => {
                   <th>BORROWER</th>
                   <th>PRICE</th>
                   <th className="date-column">DATE</th>
-                  <th>CATECORY</th>
+                  <th>CATEGORY</th>
                   <th>ADDRESS</th>
                   <th>CITY</th>
                   <th>STATE</th>

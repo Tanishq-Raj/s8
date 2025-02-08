@@ -1,5 +1,5 @@
 .image-upload-container {
-  font-family: "Roboto";
+  font-family: "Poppins", sans-serif;
 
   position: relative;
   display: flex;
@@ -7,22 +7,38 @@
   gap: 15px;
   border-right: 2.5px solid #bbb; /* Add right border */
   min-height: 100px; /* Set a minimum height */
-  height: 1600px; /* Keep it flexible and adjustable */
+  height: 900px; /* Keep it flexible and adjustable */
   padding-right: 20px; /* Add spacing for better visibility */
 }
 
 .upload-box {
-  height: 210px;
+  height: 280px;
+  width: 500px;
   border: 2px dashed #bbb;
   padding: 20px;
   text-align: center;
   border-radius: 10px;
   position: relative;
   background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 80px;
 
   .upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    .upload-icon {
+      width: 50px; // Adjust the size as needed
+      height: 50px;
+    }
+
     p {
-      margin: 5px 0;
+      margin: 0;
       font-size: 18px;
       color: #666;
     }
@@ -39,7 +55,7 @@
       border: none;
       cursor: pointer;
       border-radius: 5px;
-      margin-top: 20px;
+      margin-top: 10px;
 
       &:hover {
         background: #00334a;
@@ -47,7 +63,6 @@
     }
   }
 }
-
 /* Drag Over Effect */
 .upload-box.dragover {
   border-color: #004663;

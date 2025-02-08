@@ -1,13 +1,13 @@
 .propertyCard {
-  font-family: "Roboto";
+  font-family: "Poppins", sans-serif;
   border-radius: 20px;
-  min-width: 240px;
-  width: 330px;
+  min-width: 260px;
+  width: 360px;
   height: 500px;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  // transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   // box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
   //             0 0 0 2px rgb(190, 190, 190),
   //             0.3em 0.3em 1em rgba(0,0,0,0.3); 
@@ -18,10 +18,10 @@
   transform: scale(1.02);
 }
 
-.propertyCard:focus-within {
-  outline: 2px solid #0066cc;
-  outline-offset: 2px;
-}
+// .propertyCard:focus-within {
+//   outline: 2px solid #0066cc;
+//   outline-offset: 2px;
+// }
 
 .imageContainer {
   background: #dedede;
@@ -59,7 +59,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px; /* Adds space between each row */
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 8px;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .label {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: #333;
   min-width: 120px; /* Ensures consistent label width */
@@ -79,7 +79,7 @@
 }
 
 .value {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 300;
   color: #787486;
   // white-space: pre-wrap; /* Ensures long text wraps properly */
@@ -106,7 +106,7 @@
 .bankLabel,
 .areaLabel,
 .dateLabel {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: #333;
   min-width: 120px; /* Ensures alignment */
@@ -116,7 +116,7 @@
 .bankValue,
 .areaValue,
 .dateValue {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 300;
   color: #787486;
   white-space: pre-line;
@@ -125,6 +125,7 @@
 
 
 .viewButton {
+  // position: absolute;
   border-radius: 12px;
   background: #004663;
   color: #fff;
@@ -132,7 +133,8 @@
   font-weight: 400;
   padding: 8px 16px;
   border: none;
-  margin-top: 12px;
+  margin-top: 10px;
+  margin-left: -5px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }

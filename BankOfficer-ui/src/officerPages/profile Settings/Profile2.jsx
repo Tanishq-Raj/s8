@@ -83,7 +83,7 @@ const handleInputChange = (event) => {
           <p><strong>Email:</strong> {userDetails.email || "user@email.com"}</p>
           <p><strong>Tel:</strong> {userDetails.mobile ? `+91 ${userDetails.mobile}` : "+91 966 696 123"}</p>
         </div>
-        <div className="info">
+        <div className="info2">
           <h4>Professional Details</h4>
           <p><strong>Bank name:</strong> {userDetails.bankName || "e.g:State Bank of India"}</p>
           <p><strong>Job Title:</strong> {userDetails.jobTitle || "e.g:Manager"}</p>
@@ -126,6 +126,9 @@ const handleInputChange = (event) => {
                             </div>
                         </div>
 
+                        {/* horrizontal line */}
+                        <hr className="custom-hr" /> 
+
              {/* Professional Details Form */}
                        <div className="form-section">
                             <h4>Professional Details</h4>
@@ -157,6 +160,9 @@ const handleInputChange = (event) => {
                                 </div>
                         </div>
 
+                  {/* horrizontal line */}
+                  <hr className="custom-hr" /> 
+
             {/* Password Settings */}
             <div className="form-section">
               <h4>Password Settings</h4>
@@ -171,7 +177,7 @@ const handleInputChange = (event) => {
                 </div>
               </div>
               <div className="form-row">
-                <div className="form-group">
+                <div className="form-pass">
                   <label>Confirm New Password</label>
                   <input type="password" placeholder="Re-enter your new password..." />
                 </div>

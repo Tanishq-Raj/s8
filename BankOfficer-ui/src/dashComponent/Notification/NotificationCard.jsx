@@ -1,3 +1,5 @@
+// not in use
+
 import './Notification.scss';
 
 export function NotificationCard() {

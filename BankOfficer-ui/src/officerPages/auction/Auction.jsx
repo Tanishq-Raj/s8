@@ -1,3 +1,5 @@
+// not in use
+
 import Header from "../../dashComponent/nav/header/Header"
 import FilterOption from "../../dashComponent/propertyFilter/FilterOption"
 import PropertyCardsList from "../../dashComponent/PropertyList/PropertyCardList"
