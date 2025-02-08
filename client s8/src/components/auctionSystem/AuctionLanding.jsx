@@ -156,8 +156,28 @@ export default function AuctionLanding() {
       <div className="flex flex-col pr-7 pl-16 mt-12 w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
         <div className="shrink-0 self-end max-w-full h-px border border-black border-solid w-[1312px]" />
         <div className="flex gap-5 items-center mt-16 max-w-full leading-none w-[401px] max-md:mt-10">
-          <div className="text-xl text-black">Bid on item</div>
-          <div className="text-xl text-black">Become a Seller</div>
+          {/* <div className="text-xl text-black">Bid on item</div> */}
+          <div className="text-xl text-black">
+          <button 
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigate('/sign-up');
+                }}
+                className="text-xl text-black">
+                Bid on item
+              </button>
+
+          </div>
+          <div className="text-xl text-black">
+          <button 
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigate('/sign-up');
+                }}
+                className="text-xl text-black">
+                Become a Seller
+              </button>
+            </div>
         </div>
         <div className="self-center mt-28 ml-7 text-2xl font-semibold leading-9 text-center text-sky-900 w-[1022px] max-md:mt-10 max-md:max-w-full">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar

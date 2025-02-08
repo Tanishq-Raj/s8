@@ -87,25 +87,33 @@ function AuctionLayout() {
           
         ))}
       </div>
-      <div id="properties-section" className="flex flex-wrap gap-4 justify-center items-center self-center mt-20 w-full max-w-[1381px] max-md:mt-10 max-md:max-w-full">
-        {disCategories && displayedProperties.map((property, index) => (
-          <PropertyCard key={index} {...property} />
-        ))}
-      {disProperties && <PropertyGrid/>}
+      <div id="properties-section" className="flex flex-col items-center self-center mt-20 w-full max-w-[1381px] max-md:mt-10 max-md:max-w-full">
+        {disCategories && (
+          <>
+            <div className="flex flex-wrap gap-4 justify-center items-center w-full">
+              {displayedProperties.map((property, index) => (
+                <PropertyCard key={index} {...property} />
+              ))}
+            </div>
+            {!showAll && (
+              <div className="w-full flex justify-end px-17 max-md:px-4">
+                <button 
+                  onClick={handleViewAll}
+                  className="flex gap-2 justify-center items-center px-6 py-3 mt-8 text-xl font-medium rounded-2xl bg-sky-900 bg-opacity-5 hover:bg-opacity-10 transition-all duration-300"
+                >
+                  <div className="text-slate-600">View all...</div>
+                  <div className="flex gap-1 justify-center items-center self-stretch px-1 my-auto w-8 h-8 rounded-lg bg-sky-900 bg-opacity-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-slate-600">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            )}
+          </>
+        )}
+        {disProperties && <PropertyGrid/>}
       </div>
-      {!showAll && (
-        <button 
-          onClick={disCategories && handleViewAll}
-          className="flex gap-2 justify-center items-center self-end px-6 py-3 mt-16 mr-14 text-xl font-medium rounded-2xl bg-sky-900 bg-opacity-5 hover:bg-opacity-10 transition-all duration-300 max-md:mt-10 max-md:mr-2.5"
-        >
-          <div className="text-slate-600">View all...</div>
-          <div className="flex gap-1 justify-center items-center self-stretch px-1 my-auto w-8 h-8 rounded-lg bg-sky-900 bg-opacity-5">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-slate-600">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
-          </div>
-        </button>
-      )}
         
     </div>
   );
