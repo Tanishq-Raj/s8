@@ -144,7 +144,7 @@ const AuctionHistory = () => {
                     </td>
                     <td className="action-buttons">
                       <Link to={`/property/${item.id}`} className="view-button">
-                        <Eye size={16} /> View
+                        <Eye size={16} /> 
                       </Link>
                       <button className="edit-button">
                         <Edit size={16} />
@@ -152,9 +152,6 @@ const AuctionHistory = () => {
                       <button className="delete-button">
                         <Trash size={16} />
                       </button>
-                      {/* <button className="download-button">
-                        <Download size={16} />
-                      </button> */}
                     </td>
                   </tr>
                 ))}

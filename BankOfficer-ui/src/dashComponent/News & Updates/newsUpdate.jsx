@@ -1,8 +1,8 @@
 import "./newsUpdate.scss";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const News = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className="container">
@@ -11,7 +11,7 @@ const News = () => {
           loading="lazy"
           src="/welcomeM.png" // Use your desired image here
           alt="News"
-          className="image"
+          className="Nimage"
         />
         <button
           className="exploreNowButton"

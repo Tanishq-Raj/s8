@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
       text: 'Dashboard',
     },
     {
-      icon: '/myAsset.svg',
+      icon: '/Asset.svg',
       text: 'Assets',
       route: '/myAssets',
     },

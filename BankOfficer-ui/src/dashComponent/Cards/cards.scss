@@ -8,7 +8,7 @@
   padding-bottom: 24px;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  height: 459px;
+  height: 479px;
   width: 459px;
   -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
@@ -30,12 +30,14 @@
   }
 
   .cardsScrollContainer {
+    margin-top: -13px;
     margin-left: 10px;
-    // margin-right: 15px;
-    width: 100%;
-    overflow-x: auto; // Enable horizontal scrolling
-    padding-bottom: 10px; // Space for scrollbar
-    position: relative; // For positioning the "View All" button
+    width: calc(100% - 20px);
+    overflow-x: auto;
+    overflow-y: hidden; // Hides vertical scrollbar
+    padding-bottom: 20px; // Extra padding so the scrollbar doesn't overlap content
+    position: relative;
+    // white-space: nowrap; // Ensures cards are in one line
 
     &::-webkit-scrollbar {
       height: 5px; // Scrollbar height
@@ -55,6 +57,7 @@
     display: flex;
     gap: 10px;
     padding-bottom: 10px; // Space for scrollbar
+    min-width: 100%; // Ensures scrolling activates when needed
   }
 
   .assetCard {
@@ -64,11 +67,10 @@
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     min-width: 250px;
-    min-height: 350px; // Ensure there's enough height for content
+    // min-height: 350px; // Ensure there's enough height for content
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -101,7 +103,8 @@
           width: 100%; // Ensure the user image fills the container
           height: 100%;
           object-fit: contain; // Maintain aspect ratio without distortion
-        background-color: white;
+          overflow: hidden;
+          background-color: white;
         }
       }
     }
@@ -113,6 +116,19 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;  // Ensure content is spaced out, and button stays at the bottom
+    }
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 10px 0;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+      margin: 0 0 10px 0;
     }
   }
 
