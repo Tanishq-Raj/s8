@@ -1,6 +1,4 @@
-import ContainerHeader from "../../dashComponent/addNew_asset_header/pathHeader";
 import Header from "../../dashComponent/nav/header/Header";
-// import AssetForm from "../../dashComponent/newAssetForm/AssetForm";
 import Sidebar from "../../dashComponent/Sidebar/Sidebar";
 import ImageUpload from "../../dashComponent/upload/ImageUpload";
 import "./addAsset.scss"
@@ -29,12 +27,19 @@ const AddAsset = () => {
      <div className="addAssetContainer">
       <Header />
      <div className="mainAddAsset">
-     <ContainerHeader/>
+      {/* Top header */}
+     <div className="container-header">
+      <span>Assets &gt; </span>
+      <span className="active">Add New Asset</span>
+     </div>
+
+      {/* Left Side */}
      <div className="imaegFormContainer">
       <ImageUpload />
 
-{/* Breadcrumb with Dynamic Step Navigation */}
 
+{/* Rigt Side */}
+{/* Breadcrumb with Dynamic Step Navigation */}
      <div className="formWrapper">
         {/* Breadcrumb Component */}
         <Breadcrumb step={step} setStep={setStep} />

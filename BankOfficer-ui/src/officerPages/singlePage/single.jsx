@@ -1,8 +1,10 @@
+import GMap from "../../dashComponent/map(Google)/Gmap";
 import Header from "../../dashComponent/nav/header/Header";
 import Sidebar from "../../dashComponent/Sidebar/Sidebar";
 import SingleHeader from "../../dashComponent/singlePage Header/singleHeader";
 import Slider from "../../dashComponent/slider/Slider";
-import Map from "../../dashComponent/map/Map"; // Import Map component
+// import Map from "../../dashComponent/map/Map"; // Import Map component
+
 import { singlePostData } from "../../dummyData"; 
 import "./single.scss";
 import { useParams } from "react-router-dom"; 
@@ -135,7 +137,7 @@ const Single = () => {
     </div>
     <div className="auctionItem">
       <span className="label">Message:</span>
-      <span className="value">{post.message}</span>
+      <span className="value highlight">{post.message}</span>
     </div>
    
   </div>
@@ -144,16 +146,19 @@ const Single = () => {
 
             {/* Map Section */}
             <h3>Property Location :</h3>
-            <Map
+            <GMap
                 items={[
                   {
                     id: post.id,
                     latitude: post.latitude,
                     longitude: post.longitude,
-                    img: post.media[0], // ✅ Fixed Here
-                    title: post.title,
-                    category: post.category,
-                    price: parseInt(post.price.replace(/,/g, ""), 10),
+
+                    /*if pin marker box is using then use bellow code*/
+
+                    // img: post.media[0], // ✅ Fixed Here
+                    // title: post.title,
+                    // category: post.category,
+                    // price: parseInt(post.price.replace(/,/g, ""), 10),
                   },
                 ]}
               />

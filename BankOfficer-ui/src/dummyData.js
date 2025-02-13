@@ -127,7 +127,7 @@ export default properties;
     address: "1234 Charni Road, Mumbai ",
     nearbyPlace:"Dmart(1km away),AB School(200m away),",
     description:
-      "Future alike hill pull picture swim magic chain seed engineer nest outer raise bound easy poetry gain loud weigh me recognize farmer bare danger. actually put square leg vessels earth engine matter key cup indeed body film century shut place environment were stage vertical roof bottom lady function breeze darkness beside tin view local breathe carbon swam declared magnet escape has from pile apart route coffee storm someone hold space use ahead sheep jungle closely natural attached part top grain your grade trade corn salmon trouble new bend most teacher range anybody every seat fifteen eventually",
+      "Plot No. 39, G. No.286, S. No. 107/2 B/h Punjab aba Govardhan College, Nashik. Nashik-Mumbai Highway Village Take Ghoti, Tal. Igatpuri, Dist. Nashik admeasuring 435.25 sqm. belonging to Satish Jagannath Yewale.",
     enquiryUrl:"www.google.com",
     contactNo:"9169178550", 
     borrower: "M/s Vijay Sales",
@@ -162,7 +162,7 @@ export default properties;
     address: "1234 Charni Road, Mumbai ",
     nearbyPlace:"Dmart(1km away),AB School(200m away),",
     description:
-      "Future alike hill pull picture swim magic chain seed engineer nest outer raise bound easy poetry gain loud weigh me recognize farmer bare danger. actually put square leg vessels earth engine matter key cup indeed body film century shut place environment were stage vertical roof bottom lady function breeze darkness beside tin view local breathe carbon swam declared magnet escape has from pile apart route coffee storm someone hold space use ahead sheep jungle closely natural attached part top grain your grade trade corn salmon trouble new bend most teacher range anybody every seat fifteen eventually",
+      "Plot No.48, G. No.286, S. No. 107/2 B/h Punjab Aba Govardhane College, Nashik. Nashik-Mumbai Highway Village Take Ghoti, Ta. Igatpuri, Dist. Nashik admeasuring ( 329 Sq. Mt. belonging to Satish Jagannath Yevale",
     enquiryUrl:"www.google.com",
     contactNo:"9169178550", 
     borrower: "M/s Vijay Sales",
@@ -197,7 +197,7 @@ export default properties;
     address: "1234 Charni Road, Mumbai ",
     nearbyPlace:"Dmart(1km away),AB School(200m away),",
     description:
-      "Future alike hill pull picture swim magic chain seed engineer nest outer raise bound easy poetry gain loud weigh me recognize farmer bare danger. actually put square leg vessels earth engine matter key cup indeed body film century shut place environment were stage vertical roof bottom lady function breeze darkness beside tin view local breathe carbon swam declared magnet escape has from pile apart route coffee storm someone hold space use ahead sheep jungle closely natural attached part top grain your grade trade corn salmon trouble new bend most teacher range anybody every seat fifteen eventually",
+      "Plot No. 49, G. No.286, S. No. 107/2 B/h Punjab aba Govardhane College, Nashik. Nashik-Mumbai Highway Village Take Ghoti, Ta. Igatpuri, Dist. Nashik admeasuring 357sq.m. belonging to Satish Jagannath Yewale",
     enquiryUrl:"www.google.com",
     contactNo:"9169178550", 
     borrower: "M/s Vijay Sales",
@@ -232,7 +232,7 @@ export default properties;
     address: "1234 Charni Road, Mumbai ",
     nearbyPlace:"Dmart(1km away),AB School(200m away),",
     description:
-      "Future alike hill pull picture swim magic chain seed engineer nest outer raise bound easy poetry gain loud weigh me recognize farmer bare danger. actually put square leg vessels earth engine matter key cup indeed body film century shut place environment were stage vertical roof bottom lady function breeze darkness beside tin view local breathe carbon swam declared magnet escape has from pile apart route coffee storm someone hold space use ahead sheep jungle closely natural attached part top grain your grade trade corn salmon trouble new bend most teacher range anybody every seat fifteen eventually",
+      "N.A. Plots bearing numbers 1 to 10, out of Gat No. 37/3, Village Shastrinagar, Nandgaon-Manmad Road, Tal.. Nandgaon, Dist. Nashik. Admeasuring 7109.73 Sq. Mt.",
     enquiryUrl:"www.google.com",
     contactNo:"9169178550", 
     borrower: "M/s Vijay Sales",

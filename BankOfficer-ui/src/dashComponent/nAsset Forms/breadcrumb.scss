@@ -42,7 +42,7 @@
   }
 
   .progressLine {
-    width: 100%;
+    width: 96%;
     max-width: 600px;
     height: 3px;
     background-color: #e0e0e0;
@@ -55,10 +55,10 @@
       transition: width 0.3s ease-in-out;
 
       &.step-1 {
-        width: 30%;
+        width: 32%;
       }
       &.step-2 {
-        width: 67%;
+        width: 70%;
       }
       &.step-3 {
         width: 100%;

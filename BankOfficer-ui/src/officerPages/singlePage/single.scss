@@ -36,12 +36,6 @@
 
     
     .details {
-      width: 100%;
-      border-right: 2.5px solid #bbb; /* Add right border */
-      min-height: 100px; /* Set a minimum height */
-      height: 900px; /* Keep it flexible and adjustable */
-      padding-right: 20px; /* Add spacing for better visibility */
-
       .info {
   width: 100%;
   margin-top: 15px;
@@ -103,14 +97,18 @@
     //   line-height: 1.4;
     // }
   }
+ }
 }
-
-      
-      
-    }
 
 
   .rightSide {
+    width: 100%;
+    border-left: 2.5px solid #bbb; /* Add right border */
+    min-height: 100px; /* Set a minimum height */
+    height: 1200px; /* Keep it flexible and adjustable */
+    padding-left: 20px; /* Add spacing for better visibility */
+
+
     flex: 3;
     width: 500px;
     display: flex;
@@ -145,6 +143,12 @@
         color: gray;
         font-size: 16px;
         font-weight: 500;
+      }
+
+      .value.highlight {
+        background-color: rgb(233, 233, 166); /* Highlight color */
+        padding: 2px 5px;
+        border-radius: 4px;
       }
     }
   }

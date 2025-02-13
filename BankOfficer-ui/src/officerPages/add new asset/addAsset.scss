@@ -15,14 +15,45 @@
       flex-direction: column;
     }
   
+    //{Top header}
     .mainAddAsset {
       margin: 20px;  
       display: flex;
       flex-direction: column;
       border-radius: 20px;
       border: 1px solid rgba(0, 0, 0, 0.25);
+    
+      .container-header {
+        font-size: 16px;
+        color: #555;
+        padding: 10px 20px;
+        font-weight: 500;
+        width: 94%;
+        margin: auto;
+        position: relative;
+    
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1.8px;
+          background-color: #bbb;
+        }
+    
+        span {
+          font-size: 20px;
+        }
+    
+        .active {
+          font-weight: 600;
+          color: #000;
+        }
+      }
     }
   
+    //{Left Side ImageUpload Style}
     .imaegFormContainer {
       display: flex;
       width: 100%; // Ensures it takes full width of parent
@@ -37,6 +68,8 @@
         min-width: 50%; // Ensure equal width
       }
 
+
+      //{Right Side AssetForm Style}
       .formWrapper {
         flex: 1;
         min-width: 50%; // Ensure equal width
@@ -90,34 +123,34 @@
           }
         }
       
-        .buttonContainer {
-          display: flex;
-          justify-content: space-between;
-          margin-top: 20px;
+        // .buttonContainer {
+        //   display: flex;
+        //   justify-content: space-between;
+        //   margin-top: 20px;
       
-          .btn {
-            background-color: #0466c8;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: 0.3s;
+        //   .btn {
+        //     background-color: #0466c8;
+        //     color: #fff;
+        //     padding: 10px 15px;
+        //     border: none;
+        //     border-radius: 5px;
+        //     cursor: pointer;
+        //     font-weight: 600;
+        //     transition: 0.3s;
       
-            &:hover {
-              background-color: #0353a4;
-            }
-          }
+        //     &:hover {
+        //       background-color: #0353a4;
+        //     }
+        //   }
       
-          .submit {
-            background-color: #2d6a4f;
+        //   .submit {
+        //     background-color: #2d6a4f;
       
-            &:hover {
-              background-color: #1b4332;
-            }
-          }
-        }
+        //     &:hover {
+        //       background-color: #1b4332;
+        //     }
+        //   }
+        // }
 
       }
     }
